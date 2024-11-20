@@ -109,7 +109,7 @@ const sendResetPasswordEmil = async (email, resetToken) => {
         pass: process.env.SMTP_PASSWORD,
       },
     });
-    const resetLink = `http://localhost:3000/auth/reset-password/${resetToken}`;
+    const resetLink = `${process.env.FRONTEND_URL}/auth/reset-password/${resetToken}`;
     const mailOptions = {
       from: process.env.SMTP_EMAIL,
       to: email,
