@@ -91,9 +91,12 @@ exports.loginUser = async (req, res) => {
     process.env.JWT_SECRET
   );
   res.status(200).json({
-    success: true,
-    msg: "user logged in successfully",
-    token,
+    user: {
+      email: existingUser.email,
+      firstName: existingUser.firstName,
+      lastName: existingUser.lastName,
+      token,
+    },
   });
   // } catch (error) {}
 };

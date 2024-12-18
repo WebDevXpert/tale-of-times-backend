@@ -18,6 +18,7 @@ mongoose
 
 const articleRoutes = require("./routes/articles");
 const adminRoutes = require("./routes/admin");
+const auth = require("./middleware/authentication");
 app.use("/api/articles", articleRoutes);
 app.use("/api/v1/admin", adminRoutes);
 
